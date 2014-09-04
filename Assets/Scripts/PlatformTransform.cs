@@ -7,6 +7,7 @@ public class PlatformTransform : MonoBehaviour {
 	public float speed, acceleration;
 
 	public static float score;
+	public static int powerup;
 	public static int foodscore;
 
 
@@ -14,6 +15,7 @@ public class PlatformTransform : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		distanceTraveled = 0f;
+		powerup = 0;
 		//GUIManager.SetDistance(distanceTraveled);
 	}
 	
@@ -22,6 +24,7 @@ public class PlatformTransform : MonoBehaviour {
 		if (GameObject.FindWithTag("Player")) {
 			transform.Translate(Vector3.forward * speed * Time.deltaTime);
 			speed += Time.deltaTime * acceleration;
+			GUIManager.SetBoosts(powerup);
 			GUIManager.SetDistance(score);
 			}
 		else {
@@ -32,6 +35,8 @@ public class PlatformTransform : MonoBehaviour {
 	}
 	
 	public static void AddFood () {
+		powerup += 1;
 		foodscore += 10;
+		GUIManager.SetBoosts(powerup);
 	}
 }

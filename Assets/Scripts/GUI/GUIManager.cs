@@ -19,4 +19,8 @@ public class GUIManager : MonoBehaviour {
 	public static void SetDistance(float distance){
 		instance.distanceText.text = distance.ToString("f0");
 	}
+
+	public static void SetBoosts(int powerup){
+		instance.boostsText.text = powerup.ToString();
+	}
 }

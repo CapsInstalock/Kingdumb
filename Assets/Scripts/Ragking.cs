@@ -7,6 +7,8 @@ public class Ragking : MonoBehaviour {
 	public GameObject GameOver;
 	public GameObject explosion;
 
+	public GameObject pause;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (explode ());

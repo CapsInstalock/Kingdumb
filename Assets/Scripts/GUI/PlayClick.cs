@@ -6,6 +6,6 @@ public class PlayClick : MonoBehaviour
 	
 	void OnClick ()
 	{
-		Application.LoadLevel("Main");
+		Application.LoadLevel("LoadMain");
 	}
 }
